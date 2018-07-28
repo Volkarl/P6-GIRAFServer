@@ -1,0 +1,11 @@
+# Import in ci-file using the command: 
+# image: "thinhar/web-api-dotnetcore-build:latest"
+
+# base image from dockerhub
+FROM microsoft/aspnetcore-build:2.0.5-2.1.4-jessie
+
+# execute command to setup environment
+RUN apt-get update && rm -rf /var/lib/apt/lists/*
+# We probably don't need this; though the uploaded image did do this
+
+ENV ASPNETCORE_ENVIRONMENT=Production
